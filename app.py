@@ -8,10 +8,11 @@ import gdown
 # Check device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+
 # Google Drive file ID and URL
-file_id = '1flIQi2lir_2qwtzExSpWLam6KZRxb3IV'
+file_id = '1lSun6s685Ysmytz3ij0y46aAmGR6Uwia'
 url = f'https://drive.google.com/uc?id={file_id}'
-output = 'ResNet152v2_rmsprop_tmodel.pt'
+output = 'ResNet152v2_tmodel.pt'
 
 @st.cache_data(show_spinner=False)
 def download_model():
