@@ -53,7 +53,7 @@ def predict(image):
 
 # Streamlit app
 def main():
-    st.title("Cotton Plant Disease Classification")
+    st.title("Cloud Based Plant Disease Detection System (CBPDDS)")
     st.text("Upload an image for classification")
 
     # File uploader widget
@@ -68,8 +68,11 @@ def main():
         if st.button('Classify'):
             with st.spinner('Classifying...'):
                 probability, index = predict(uploaded_file)
-                # Display the top prediction
-                st.write(f"Prediction :  {class_names[index].capitalize()} ({probability * 100:.2f}%)")
+                # Display the prediction
+                if probability >= 0.99:
+                    st.write(f"Prediction: {class_names[index].capitalize()} ({probability * 100:.2f}%)")
+                else:
+                    st.write("Prediction: None of the above")
 
 if __name__ == '__main__':
     main()
