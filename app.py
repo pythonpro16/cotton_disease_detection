@@ -44,7 +44,7 @@ h1#cloud-based-plant-disease-detection-system-cbpdds {{
 }}
 
 
-.st-emotion-cache-1vt4y43 {{
+.st-emotion-cache-7ym5gk {{
     display: inline-flex;
     -webkit-box-align: center;
     align-items: center;
@@ -64,28 +64,28 @@ h1#cloud-based-plant-disease-detection-system-cbpdds {{
 }}    
 
 /* Hover state */
-.st-emotion-cache-1vt4y43:hover {{
+.st-emotion-cache-7ym5gk:hover {{
     background-color: rgb(173, 255, 47); /* Yellow-Green background */
     border: 1px solid rgb(173, 255, 47); /* Yellow-Green border */
     color : black
 }}
 
 /* Active state */
-.st-emotion-cache-1vt4y43:active {{
+.st-emotion-cache-7ym5gk:active {{
     background-color: rgb(154, 205, 50); /* Darker Yellow-Green background */
     border: 1px solid rgb(154, 205, 50); /* Darker Yellow-Green border */
     color : black
 }}
 
 /* visited state */
-.st-emotion-cache-1vt4y43:visited {{
+.st-emotion-cache-7ym5gk:visited {{
     background-color: rgb(52, 210, 235); /* Darker Yellow-Green background */
     border: 1px solid rgb(154, 205, 50); /* Darker Yellow-Green border */
     color : black
 }}
 
 /* focus:not(:active) state */
-.st-emotion-cache-1vt4y43:focus:not(:active) {{
+.st-emotion-cache-7ym5gk:focus:not(:active) {{
     border-color: rgb(154, 205, 50);
     color: rgb(14, 17, 23);
 }}
