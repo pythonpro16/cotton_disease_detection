@@ -211,7 +211,16 @@ def predict(image):
         output = model(img)
     probabilities = torch.nn.functional.softmax(output[0], dim=0)
     top_prob, top_idx = torch.max(probabilities, 0)
-    return top_prob.item(), top_idx.item()
+    probability = top_prob
+    index = top_idx
+    if probability >= 0.99:
+        if index in [0,1]:
+                return  f'<div style="background-color: rgb(244,67,54,0.8); font-weight: bold;color: black; padding: 20px;border-radius : 0.5rem;text-align : center">Prediction  :  {class_names[index].capitalize()} ({probability * 100:.2f}%)</div>'
+        else:
+                return f'<div style="background-color: rgba(173,255,47, 0.8); font-weight: bold;color:black; padding: 20px;border-radius : 0.5rem;text-align : center">Prediction  :  {class_names[index].capitalize()} ({probability * 100:.2f}%)</div>'
+
+    else:
+        return  f'<div style="background-color: rgba(255, 0, 0, 0.8); font-weight: bold;color: black; padding: 20px;border-radius : 0.5rem;text-align : center">Error : Invalid image - Please upload a valid cotton plant or leaf image </div>'
 
 # Streamlit app
 def main():
@@ -232,14 +241,9 @@ def main():
         # Classify the image
         if st.button('Classify'):
             with st.spinner('Classifying...'):
-                probability, index = predict(uploaded_file)
+                predicition = predict(uploaded_file)
                 # Display the prediction
-                if probability >= 0.99:
-                    st.write(f"Prediction  :  {class_names[index].capitalize()} ({probability * 100:.2f}%)")
-                else:
-                     st.markdown(
-                        f'<div style="background-color: rgba(255, 0, 0, 0.8); color: white; padding: 20px;border-radius : 0.5rem;text-align : center">Error : Invalid image - Please upload a valid cotton plant or leaf image </div>',
-                        unsafe_allow_html=True)
+                st.markdown(predicition,unsafe_allow_html=True)
             
 
                     
