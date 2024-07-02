@@ -129,7 +129,7 @@ section.st-emotion-cache-1gulkj5.e1b2p2ww15 {{
     background: rgb(255 255 255 / 88%);
 }}
 
-.stFileUploaderFile.st-emotion-cache-12xsiil.e1b2p2ww5 {{
+.st-emotion-cache-fis6aj {{
     background: rgb(240 242 246 / 77%);
     border-radius: 0.5rem;
     padding: 10px;
