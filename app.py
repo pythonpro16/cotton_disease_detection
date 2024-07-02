@@ -133,7 +133,7 @@ section.st-emotion-cache-1gulkj5.e1b2p2ww15 {{
     background: rgb(240 242 246 / 77%);
     border-radius: 0.5rem;
     padding: 10px;
-    margin-bottom: 0;
+    margin-top: 0.5rem;
 }}
 
 .st-emotion-cache-1v0mbdj.e115fcil1 {{
