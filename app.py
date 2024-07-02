@@ -134,6 +134,7 @@ section.st-emotion-cache-1gulkj5.e1b2p2ww15 {{
     border-radius: 0.5rem;
     padding: 10px;
     margin-top: 0.5rem;
+    margin-bottom : 0;
 }}
 
 .st-emotion-cache-1v0mbdj.e115fcil1 {{
