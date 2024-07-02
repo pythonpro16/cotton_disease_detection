@@ -172,11 +172,23 @@ right: 2rem;
 # Check device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-# Load the saved model weights
-model = torch.load('ResNet152v2_tmodel.pt', map_location=device)
+# Google Drive file ID and URL
+file_id = '1lSun6s685Ysmytz3ij0y46aAmGR6Uwia'
+url = f'https://drive.google.com/uc?id={file_id}'
+output = 'ResNet152v2_tmodel.pt'
+
+@st.cache_data(show_spinner=False)
+def download_model():
+    gdown.download(url, output, quiet=False)
+    return output
+
+# Download the model if not already downloaded
+model_path = download_model()
+
+# Load the model
+model = torch.load(model_path, map_location=device)
 model.to(device)
 model.eval()
-
 # Class names for the predictions
 class_names = ['diseased cotton leaf', 'diseased cotton plant', 'fresh cotton leaf', 'fresh cotton plant']
 
